@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constant.h"
+#import "CHTCollectionViewWaterfallLayout.h"
 
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : UIViewController<UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+{
+    //Outlet for the collection view
+    IBOutlet UIView *viw_timeline;
+}
+@property(nonatomic,strong) IBOutlet UICollectionView *collectionView;
 
 @end

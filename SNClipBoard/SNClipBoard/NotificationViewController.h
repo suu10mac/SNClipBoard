@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NotificationViewController : UIViewController
+{
+    //Outlet for the tableview
+    IBOutlet UITableView *tbl_notifications;
+    NSMutableArray *mu_arr_notifications;
+}
 
 @end

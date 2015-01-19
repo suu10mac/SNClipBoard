@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EAIntroView.h"
+#import "LoginViewController.h"
+#import "SignupViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<EAIntroDelegate>
+{
+    //Oultlet for the Slide view
+    IBOutlet UIView *viw_slide;
+    IBOutlet UIButton *btn_login,*btn_signup;
+}
+
 
 
 @end

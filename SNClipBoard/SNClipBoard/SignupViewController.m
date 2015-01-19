@@ -14,6 +14,7 @@
 
 @implementation SignupViewController
 
+#pragma mark- ---------------------View Lifecycle-----------------------
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -33,5 +34,39 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark- -------------------Button Control Functions------------------
+-(IBAction)btn_back:(id)sender
+{
+    if ([sender tag]==0) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+    {
+        viw_page2.hidden=YES;
+    }
+}
+-(IBAction)btn_done:(id)sender
+{
+    if ([sender tag]==0) {
+        viw_page2.hidden=NO;
+    }
+    else
+    {
+        //Submit and show discover page
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                             bundle:nil];
+        TimelineViewController *viw_timeline=
+        [storyboard instantiateViewControllerWithIdentifier:@"timeline"];
+        
+        [self presentViewController:viw_timeline
+                           animated:YES
+                         completion:nil];
+    }
+}
+#pragma mark- ------------------Uitext field Deleagte------------------------
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

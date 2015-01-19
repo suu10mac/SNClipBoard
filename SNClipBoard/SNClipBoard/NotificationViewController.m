@@ -14,6 +14,7 @@
 
 @implementation NotificationViewController
 
+#pragma mark- -------------------View Lifecycle-----------------------
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -33,5 +34,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark- -------------------Uitableview Delegates---------------------
 
 @end
