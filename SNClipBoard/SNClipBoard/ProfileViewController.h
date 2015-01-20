@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constant.h"
+#import "CHTCollectionViewWaterfallLayout.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController<UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+{
+    //Outlet for the view slide
+    IBOutlet UIView *viw_post;
+}
+@property(nonatomic,strong) IBOutlet UICollectionView *collectionView;
 
+-(void)get_profile_details:(NSDictionary *)values;
 @end

@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    viw_page2.hidden=YES;
 }
 
 - (void)didReceiveMemoryWarning {

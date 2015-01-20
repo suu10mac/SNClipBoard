@@ -124,4 +124,17 @@
 {
     NSLog(@"The clicked cell is %ld",(long)indexPath.item);
 }
+#pragma mark- ------------------------Outlet Control Functions---------------------
+-(IBAction)btn_profile:(id)sender
+{
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                         bundle:nil];
+    ProfileViewController *viw_profile =
+    [storyboard instantiateViewControllerWithIdentifier:@"profile"];
+    
+    [self presentViewController:viw_profile
+                       animated:YES
+                     completion:nil];
+    
+}
 @end

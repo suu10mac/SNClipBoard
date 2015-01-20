@@ -35,6 +35,8 @@
 		3D515D741A6A285900F2876E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3D515D6E1A6A285900F2876E /* LICENSE */; };
 		3D515D751A6A285900F2876E /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 3D515D6F1A6A285900F2876E /* readme.md */; };
 		3D515D761A6A285900F2876E /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D515D711A6A285900F2876E /* SMPageControl.m */; };
+		3D800A0B1A6CE753004B9707 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D800A0A1A6CE753004B9707 /* DetailViewController.m */; };
+		3D800A0E1A6CF52A004B9707 /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D800A0D1A6CF52A004B9707 /* UploadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		3D515D6F1A6A285900F2876E /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		3D515D701A6A285900F2876E /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		3D515D711A6A285900F2876E /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		3D800A091A6CE753004B9707 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3D800A0A1A6CE753004B9707 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		3D800A0C1A6CF52A004B9707 /* UploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
+		3D800A0D1A6CF52A004B9707 /* UploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +196,16 @@
 				3D515D5C1A6A1E4800F2876E /* SignupViewController.m */,
 				3D515D5E1A6A1E6D00F2876E /* TimelineViewController.h */,
 				3D515D5F1A6A1E6D00F2876E /* TimelineViewController.m */,
+				3D800A091A6CE753004B9707 /* DetailViewController.h */,
+				3D800A0A1A6CE753004B9707 /* DetailViewController.m */,
 				3D515D611A6A1EE600F2876E /* DiscoverViewController.h */,
 				3D515D621A6A1EE600F2876E /* DiscoverViewController.m */,
 				3D515D641A6A1F0000F2876E /* NotificationViewController.h */,
 				3D515D651A6A1F0000F2876E /* NotificationViewController.m */,
 				3D4D9AFF1A6B92EB0011A812 /* ProfileViewController.h */,
 				3D4D9B001A6B92EB0011A812 /* ProfileViewController.m */,
+				3D800A0C1A6CF52A004B9707 /* UploadViewController.h */,
+				3D800A0D1A6CF52A004B9707 /* UploadViewController.m */,
 				3D515D381A6A074000F2876E /* Main.storyboard */,
 				3D515D3B1A6A074000F2876E /* Images.xcassets */,
 				3D515D3D1A6A074000F2876E /* LaunchScreen.xib */,
@@ -367,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D800A0E1A6CF52A004B9707 /* UploadViewController.m in Sources */,
 				3D515D751A6A285900F2876E /* readme.md in Sources */,
 				3D515D5A1A6A1E2F00F2876E /* LoginViewController.m in Sources */,
 				3D4D9AF31A6B87430011A812 /* CHTCollectionViewWaterfallFooter.m in Sources */,
@@ -382,6 +393,7 @@
 				3D515D601A6A1E6D00F2876E /* TimelineViewController.m in Sources */,
 				3D4D9B081A6B9F9A0011A812 /* HPTextViewInternal.m in Sources */,
 				3D515D721A6A285900F2876E /* EAIntroPage.m in Sources */,
+				3D800A0B1A6CE753004B9707 /* DetailViewController.m in Sources */,
 				3D515D731A6A285900F2876E /* EAIntroView.m in Sources */,
 				3D4D9B071A6B9F9A0011A812 /* HPGrowingTextView.m in Sources */,
 				3D4D9AF21A6B87430011A812 /* CHTCollectionViewWaterfallCell.m in Sources */,

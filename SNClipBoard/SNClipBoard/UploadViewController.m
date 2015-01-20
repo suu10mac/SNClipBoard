@@ -1,24 +1,22 @@
 //
-//  DiscoverViewController.m
+//  UploadViewController.m
 //  SNClipBoard
 //
-//  Created by DREAM MOUNT TECH on 1/17/15.
+//  Created by DREAM MOUNT TECH on 1/19/15.
 //  Copyright (c) 2015 DreamMountTechnologies. All rights reserved.
 //
 
-#import "DiscoverViewController.h"
+#import "UploadViewController.h"
 
-@interface DiscoverViewController ()
+@interface UploadViewController ()
 
 @end
 
-@implementation DiscoverViewController
+@implementation UploadViewController
 
-#pragma mark- ----------------------------View Lifecycle----------------------
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   
 }
 
 - (void)didReceiveMemoryWarning {

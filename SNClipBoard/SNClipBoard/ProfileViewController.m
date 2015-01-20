@@ -7,8 +7,13 @@
 //
 
 #import "ProfileViewController.h"
+#import "CHTCollectionViewWaterfallCell.h"
+#import "CHTCollectionViewWaterfallHeader.h"
+#import "CHTCollectionViewWaterfallFooter.h"
 
 @interface ProfileViewController ()
+
+@property (nonatomic, strong) NSMutableArray *cellSizes;
 
 @end
 
@@ -17,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [viw_post addSubview:self.collectionView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +39,96 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark- -------------------------------CHTCOllectionView deleagtes------------------
+#pragma mark Generate CollectionView
+-(UICollectionView *)collectionView
+{
+    if (!_collectionView) {
+        CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
+        
+        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        layout.headerHeight = 0;
+        layout.footerHeight = 0;
+        layout.minimumColumnSpacing = 3;
+        layout.minimumInteritemSpacing = 3;
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        _collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        _collectionView.backgroundColor = [UIColor whiteColor];
+        [_collectionView registerClass:[CHTCollectionViewWaterfallCell class]
+            forCellWithReuseIdentifier:CELL_IDENTIFIER];
+        [_collectionView registerClass:[CHTCollectionViewWaterfallHeader class]
+            forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader
+                   withReuseIdentifier:HEADER_IDENTIFIER];
+        /*   [_collectionView registerClass:[CHTCollectionViewWaterfallFooter class]
+         forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter
+         withReuseIdentifier:FOOTER_IDENTIFIER];*/
+    }
+    return _collectionView;
+}
+#pragma mark generate cellsizes
+-(NSMutableArray*)cellSizes
+{
+    if (!_cellSizes) {
+        _cellSizes = [NSMutableArray array];
+        for (int i; i<10; i++) {
+            CGSize size = CGSizeMake(50,100);
+            _cellSizes[i] = [NSValue valueWithCGSize:size];
+            
+        }
+    }
+    return _cellSizes;
+}
+#pragma mark COllectionView datasource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CHTCollectionViewWaterfallCell *cell =
+    (CHTCollectionViewWaterfallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CELL_IDENTIFIER
+                                                                                forIndexPath:indexPath];
+    cell.displayString = [NSString stringWithFormat:@"%ld", (long)indexPath.item];
+    return cell;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView = nil;
+    
+    if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                          withReuseIdentifier:HEADER_IDENTIFIER
+                                                                 forIndexPath:indexPath];
+    } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind
+                                                          withReuseIdentifier:FOOTER_IDENTIFIER
+                                                                 forIndexPath:indexPath];
+    }
+    
+    return reusableView;
+}
+#pragma mark  CHTCollectionViewDelegateWaterfallLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.cellSizes[indexPath.item] CGSizeValue];
+}
+#pragma mark Collection view DID Selcet
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"The clicked cell is %ld",(long)indexPath.item);
+}
+#pragma mark- ------------------Get Other Details-----------------------
+-(void)get_profile_details:(NSDictionary *)values
+{
+    NSLog(@"The values are:%@",values);
+}
+#pragma mark- ------------------Outlet Button Functions------------------
+-(IBAction)btn_back:(id)sender
+{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end

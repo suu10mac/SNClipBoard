@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Constant.h"
 #import "CHTCollectionViewWaterfallLayout.h"
+#import "ProfileViewController.h"
 
 @interface TimelineViewController : UIViewController<UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
 {
