@@ -40,23 +40,24 @@
     EAIntroPage *page1 =[EAIntroPage page];
     page1.title =@"Clip Board";
     page1.desc=[NSString stringWithFormat:@"Amazing"];
-    page1.bgImage = [UIImage imageNamed:@""];
+    page1.bgImage = [UIImage imageNamed:@"IMG_001"];
     
     //Page2
     EAIntroPage *page2 =[EAIntroPage page];
     page2.title =@"Clip Board";
     page2.desc=[NSString stringWithFormat:@"Amazing"];
-    page2.bgImage = [UIImage imageNamed:@""];
+    page2.bgImage = [UIImage imageNamed:@"IMG_002"];
     
     //Page3 
     EAIntroPage *page3 =[EAIntroPage page];
     page3.title =@"Clip Board";
     page3.desc=[NSString stringWithFormat:@"Amazing"];
-    page3.bgImage = [UIImage imageNamed:@""];
+    page3.bgImage = [UIImage imageNamed:@"IMG_003"];
     
     EAIntroView *intro = [[EAIntroView alloc]initWithFrame:viw_slide.frame andPages:@[page1,page2,page3]];
     [intro setDelegate:self];
-    
+    intro.skipButton.enabled = NO;
+    intro.skipButton.hidden=YES;
     [intro showInView:viw_slide animateDuration:0.3];
     
 }

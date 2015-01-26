@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TimelineViewController.h"
+#import "Constant.h"
 
 @interface SignupViewController : UIViewController<UITextFieldDelegate>
 {

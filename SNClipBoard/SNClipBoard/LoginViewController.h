@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constant.h"
 #import "TimelineViewController.h"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
@@ -17,8 +18,10 @@
     IBOutlet UITextField *txt_password;
     
     IBOutlet UIButton *btn_done;
+    IBOutlet UIButton *btn_frgot;
     IBOutlet UIButton *btn_secure_show;
     BOOL secure_show;
+    IBOutlet UILabel *lbl_frgot_msg;
 }
 
 @end

@@ -11,9 +11,17 @@
 
 #define KAppname "ClipBoard"
 
+#import "JSON.h"
+
+#import "NSString+Hashes.h"
+
+#import "AppDelegate.h"
+
+#import "Reachability.h"
+
 #pragma mark- ---------------------API CALLS URLS----------
 
-#define kServerUrl "http://dreammtechnologies.com/pers/sai/"
+#define kServerUrl "http://dreammtechnologies.com/pers/clip/api/"
 
 #define kFileServerUrl "http://"
 

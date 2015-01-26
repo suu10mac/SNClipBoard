@@ -14,9 +14,30 @@
 
 @implementation AppDelegate
 
+@synthesize activity,lbl,Alertview;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    Alertview=[[UIView alloc]initWithFrame:CGRectMake(100, 160, 100, 100)];
+    Alertview.center=self.window.center;
+    activity=[[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    Alertview.backgroundColor=[UIColor blackColor];
+    Alertview.alpha=0.699999988079071;
+    Alertview.layer.cornerRadius=8.0;
+    [activity setFrame:CGRectMake(25, 7, 50, 50)];
+    [activity setHidesWhenStopped:YES];
+    lbl=[[UILabel alloc]initWithFrame:CGRectMake(2, 51, 96, 41)];
+    [lbl setBackgroundColor:[UIColor clearColor]];
+    [lbl setNumberOfLines:2];
+    [lbl setFont:[UIFont systemFontOfSize:17]];
+    [lbl setTextAlignment:NSTextAlignmentCenter];
+    [lbl setTextColor:[UIColor whiteColor]];
+    [Alertview addSubview:lbl];
+    [Alertview addSubview:activity];
+    [self.window addSubview:Alertview];
+    [Alertview setHidden:NO];
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     return YES;
 }
 
